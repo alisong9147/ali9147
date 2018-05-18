@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        body{
+            background: #000;
+        }
+        span{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url("star.png") no-repeat;
+            background-size: 100% 100%;
+            animation: flash 1s alternate infinite; duration timing-function delay iteration-count direction fill-mode;
+        }
+        @keyframes flash {
+            0%{opacity: 0;}
+            100%{opacity: 1;}
+        }
+        span:hover{
+            transform: scale(3,3) rotate(180deg) !important;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <span></span>
+    <script>
+        window.onload = function(){
+            //1、求出屏幕尺寸
+            var screenW = document.documentElement.clientWidth;
+            var screenH = document.documentElement.clientHeight;
+            //2 动态创建星星
+            for(i = 0; i < 200; i ++){
+                //2.1 创建星星
+                var span = document.createElement("span");
+                document.body.appendChild(span);
+                //2.2 获得随机坐标
+                var x = parseInt(Math.random()* screenW);
+                var y = parseInt(Math.random()* screenH);   
+                span.style.left = x + 'px';
+                span.style.top = y + 'px';
+                // 2.3 随机缩放
+                var scale = Math.random()*1.5;
+                span.style.transform = 'scale('+ scale +','+ scale +')';
+                //2.4 频率
+                var rate = Math.random() * 1.5;
+                span.style.animationDelay = rate + 's';
+            }
+        }
+    </script>
+</body>
+</html>

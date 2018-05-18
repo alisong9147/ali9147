@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            let des = document.getElementById("des");
+            let big_img = document.getElementById("big_img");
+            let ul = document.getElementById("fj");
+            let aList = ul.getElementsByTagName("a");
+            for( i = 0;i<aList.length;i++){
+                aList[i].onclick = function(){
+                    des.innerHTML = this.title;
+                    big_img.src = this.href;
+                    return false;
+                }
+            }
+        }
+    </script>
+    <style>
+    #fj>li{
+        list-style: none;
+        float: left;
+        margin: 10px;
+    }
+    #big_img{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <p id="des">01</p>
+
+    <img src="pics/gf01.jpeg" alt="" id="big_img" style="width: 540px">
+    <ul id="fj">
+        <li><a href="pics/gf02.jpeg" title="02"><img src="pics/gf02.jpeg" alt="" width="100px"></a></li>
+        <li><a href="pics/gf03.jpeg" title="03"><img src="pics/gf03.jpeg" alt="" width="100px"></a></li>
+        <li><a href="pics/gf04.jpeg" title="04"><img src="pics/gf04.jpeg" alt="" width="100px"></a></li>
+        <li><a href="pics/gf05.jpeg" title="05"><img src="pics/gf05.jpeg" alt="" width="100px"></a></li>
+    </ul>
+</body>
+</html>

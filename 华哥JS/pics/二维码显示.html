@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style>
+		*{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		#code{
+			width: 50px;
+			height: 50px;
+			position: fixed;
+			top: 40%;
+			background: url("code.png") no-repeat;
+			cursor: pointer;
+		}
+		#e_code{
+			position: absolute;
+			left: 50px;
+			display: none;
+		}
+		</style>
+		<script>
+
+			window.onload = function(){
+				//1.获取元素
+				let code = document.getElementById("code");
+				let e_code = document.getElementById("e_code");
+
+				//2.绑定事件
+				code.onmouseover = function(){
+					//图片改变，显示大图
+					this.style.background = 'url("code_select.jpeg") no-repeat';
+					e_code.style.display = "block";
+				}
+				code.onmouseout = function(){
+					this.style.background = 'url("code.png") no-repeat';
+					e_code.style.display = "none";
+
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="code">
+			<div id="e_code">
+			<img src="e_code.png" alt=""></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #box{
+            width: 350px;
+            box-shadow: 0 0 10px #000;
+            margin: 50px auto;
+            padding: 20px;
+        }
+       .panel-header, .panel-footer{
+           
+            text-align: center;
+       }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <section class="panel-header">
+            <h2>歌曲排行榜</h2>
+            <hr>
+        </section>
+        <section class="panel-content">
+            <input type="checkbox">1.时间都去哪了 <br>
+            <input type="checkbox">1.时间都去哪了<br>
+            <input type="checkbox">1.时间都去哪了<br>
+            <input type="checkbox">1.时间都去哪了<br>
+            <input type="checkbox">1.时间都去哪了<br>
+            <input type="checkbox">1.时间都去哪了<br>
+        </section>
+        <section class="panel-footer">
+            <hr>
+            <button id="allSelect">全选</button>
+            <button id="cancelSelect">取消选中</button>
+            <button id="reseverSelect">反选</button>
+        </section>
+    </div>
+    <script>
+        window.onload = function(){
+            // let allSelect = document.getElementById("allSelect");
+            // let cancelSelect = document.getElementById("cancelSelect");
+            // let reseverSelect = document.getElementById("reseverSelect");
+
+            function $(id){
+                return typeof id ==="string"?document.getElementById(id):null;
+            }
+            let puts = document.querySelectorAll('input');
+            //全选
+            $("allSelect").onclick = function(){
+                for(let i = 0;i<puts.length;i++){
+                    puts[i].checked = true;
+                }
+            }
+            //取消选中
+            cancelSelect.onclick = function(){
+                for(let i = 0;i<puts.length;i++){
+                    puts[i].checked = false;
+                }
+            }
+            // 反选
+            reseverSelect.onclick = function(){
+                for(let i = 0;i<puts.length;i++){
+                    puts[i].checked = !puts[i].checked;
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="name" placeholder="请输入xxx">
+    <script>
+        window.onload = function(){
+            let name = document.getElementById("name");
+            //获得焦点
+            name.onfocus = function(){
+                this.style.width = "600px";
+                this.style.height = "40px";
+                this.style.outline = "none";
+                this.style.fontSize = "20px";
+                this.style.color = "red";
+            }
+
+            //失去焦点
+            name.onblur = function(){
+                this.style.border = "2px solid red";
+                this.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

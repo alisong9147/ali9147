@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 头部区域 */
+#tab{
+    width: 498px;
+    height: 120px;
+    border: 1px solid #ccc;
+    margin: 100px auto;
+}
+#tab_header{
+    background-color: #e8e8e8;
+    height: 28px;
+}
+#tab_header ul li{
+    float: left;
+    width: 99px;
+    text-align: center;
+    line-height: 28px;
+
+}
+#tab_header ul li.selected{
+    background-color: #fff;
+    border-bott 
+}
+#tab_header ul li:hover{
+    color:orangered;
+    font-weight:bolder;
+    cursor: pointer;
+
+}
+
+/* 内容区域 */
+
+#tab_content{
+
+}
+#tab_content .dom{
+    padding-top: 20px;
+    display: none;
+}
+#tab_content .dom li{
+    float: left;
+    width: 220px;
+    text-align: center;
+    margin: 5px;
+}
+#tab_content .dom li a:hover{
+    color: orangered;
+}

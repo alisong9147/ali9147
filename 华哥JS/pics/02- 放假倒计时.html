@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #time{
+            font-size: 26px;
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="time">距离放假还有180天01小时03分钟24秒</div>
+    <script>
+        var time = document.getElementById('time');
+        var nextDate = new Date('2018/4/30 24:00:00');
+        // 开启定时器
+        setInterval(function(){
+            // 获取现在的时间
+            var currentDate = new Date();
+            // 获取时间戳
+            var nextTime = nextDate.getTime();
+            var crrentTime = currentDate.getTime();
+            var allTime = nextTime - crrentTime;
+            
+            //转化
+            var allSecond = parseInt(allTime/1000);
+            var d = parseInt(allSecond/3600/24);
+            var h = parseInt(allSecond/3600%24);
+            var m = parseInt(allSecond/60%60);
+            var s = parseInt(allSecond%60);
+            //注入
+            time.innerHTML = "距离放假还有"+ d +"天"+ h +"小时"+ m + "分钟"+ s +"秒"
+
+        },1000)
+
+    </script>
+</body>)
+    </script>
+</body>
+</html>

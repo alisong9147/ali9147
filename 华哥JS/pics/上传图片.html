@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">上传图片的格式验证：</label>
+    <input type="file" id="file">
+
+    <script>
+        //1.获取标签
+        var file = document.getElementById("file");
+        //2.监听作用域的变化
+        file.onchange = function(){
+            //2.1 获取上传图片的路径
+            var path = this.value;
+            //console.log(path);
+            //2.2 获取文件格式
+            var suffix = path.substr(path.lastIndexOf('.'));
+            // console.log(suffix);
+            //2.3 统一转成小写
+            var lower_suffix = suffix.toLowerCase();
+            //判断
+            if(lower_suffix ===".jpg"||lower_suffix ===".jpeg"|| lower_suffix ===".png"){
+                alert("正确")
+            }else{
+                alert("不正确");
+            }
+        }
+        
+    </script>
+</body>
+</html>

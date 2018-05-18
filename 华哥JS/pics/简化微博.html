@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #box{
+            width: 600px;
+            padding: 20px;
+            margin: 100px auto;
+            border: 1px solid #000000;
+        }
+        #textarea{
+            width: 80%;
+            height: 120px;
+        }
+        #bot_ul{
+            width: 80%;
+            /* margin: 0 auto; */
+            padding: 0 70px;
+            margin-top: 20px;
+        }
+        #bot_ul li{
+            border-bottom: 1px dashed #ccc; 
+            color: red;
+        }
+        #bot_ul li a{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box_top">
+            <label for="">发表评论</label>
+            <textarea name="" id="textarea" cols="60" rows="10"></textarea>
+            <button id="text_btn">发表</button>
+        </div>
+        <ul id="bot_ul">
+
+        </ul>
+    </div>
+    <script>
+        window.onload = function(){
+            //监听按钮的点击
+            $("text_btn").onclick = function(){
+                //获取值
+                var content = $("textarea").value;
+                //判断值是否为空
+                if(content.length === 0){
+                    alert("请输入评论内容");
+                    return;
+                }
+                //将值传入“li”标签放入ul
+                var li = document.createElement("li");
+                    li.innerHTML = content;
+                    $("bot_ul").appendChild(li);
+                     //清除输入框的内容
+                     $("textarea").value ='';
+            }
+           
+
+
+
+            function $(id){
+                return typeof id ==="string"?document.getElementById(id) : null;
+            }
+        }
+    </script>
+</body>
+</html>

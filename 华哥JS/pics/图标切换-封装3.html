@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #box img{
+            width: 70px;
+            height: 70px;
+            float: left;
+            padding-top: 360px;
+            cursor: pointer;
+
+        }
+        #box{
+            background: url("gf06.jpg") no-repeat;
+            width: 350px;
+            height: 360px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><img src="gf01.jpeg" alt=""></li>
+            <li><img src="gf02.jpeg" alt=""></li>
+            <li><img src="gf03.jpeg" alt=""></li>
+            <li><img src="gf04.jpeg" alt=""></li>
+            <li><img src="gf05.jpeg" alt=""></li>
+
+        </ul>
+    </div>
+    <script>
+        let box = document.getElementById("box");
+        let allLi = document.getElementsByTagName("li");
+       
+
+        for(let i = 0; i<allLi.length; i++){
+            let sLi = allLi[i];
+            sLi.index = i + 1;
+            sLi.onmouseover = function(){
+                box.style.background = 'url("gf0'+ this.index +'.jpeg") no-repeat';
+            }
+        }
+    </script>
+</body>
+</html>

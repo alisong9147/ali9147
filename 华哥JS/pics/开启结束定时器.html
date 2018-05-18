@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn1">开启</button>
+        <button id="btn2">结束</button>
+    </div>
+    <script>
+        window.onload = function(){
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            // 1、 开启定时器
+            var height = 150,timer = '';
+            btn1.onclick = function(){
+                 timer = setInterval(function(){
+                    console.log(height += 1);
+                },1000)
+            }
+            //2、 结束定时器
+            btn2.onclick = function(){
+                clearInterval(timer);
+            }
+        }
+    </script>
+</body>
+</html>

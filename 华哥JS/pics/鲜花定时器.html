@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <style>
+      *{
+          padding: 0;
+          margin: 0;
+          list-style: none;
+      }
+      body{
+          background-color: #000;
+          text-align: center;
+          padding: 100px;
+      }
+      #time{
+          font-size: 100px;
+          color: red;
+      }
+      #flower{
+          display: none;
+      }
+  </style>
+  <script>
+      window.onload = function(){
+          var time = document.getElementById("time");
+          var flower = document.getElementById("flower");
+        // 1。 倒计时
+          var timer = setInterval(function(){
+            time.innerHTML -= 1;
+            if(time.innerHTML === "0"){
+            clearInterval(timer);
+            time.style.display = "none";
+            flower.style.display = "block";
+        }
+        },1000);
+        // 2. 当倒计时为0时隐藏time，清掉定时器
+        
+        // 3. flower.display = block
+      }
+  </script>
+</head>
+<body>
+    <div id="time">5</div>
+    <img id="flower" src="flower.gif" alt="">
+</body>
+</html>

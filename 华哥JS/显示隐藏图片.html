@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload = function(){
+        let btn = document.getElementById("btn");
+        let img = document.getElementById("img");
+        btn.onclick = function(){
+            //1.修改文字内容 2.图片隐藏
+            if(btn.innerText === "隐藏"){
+                btn.innerText = "显示";
+                img.style.display = "none";
+            }else{
+                btn.innerText = "隐藏";
+                img.style.display = "block";
+
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <button id="btn">隐藏</button>
+    <p></p>
+    <img src="pics/gf01.jpeg" alt="" id="img">
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+        #progress{
+            width: 1000px;
+            height: 30px;
+            line-height: 30px;
+            margin: 30px auto;
+            /* background-color: #e8e8e8; */
+            position: relative;
+        }
+        #progress_bar{ 
+            width: 900px;
+            height: 100%;
+            background-color: #5f5656;
+            position: relative;
+            border-radius: 8px;
+        }
+        #progress_bar_fg{
+            width: 0;
+            height: 100%;
+            background-color: orangered;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            
+        }
+        #progress_bar span{
+            width:20px;
+            height: 40px;
+            background-color:orangered;
+            position: absolute;
+            top: -5px;
+            left: 0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #progress_value{
+            position: absolute;
+            top: 0;
+            right: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress">
+        <div id="progress_bar">
+            <div id="progress_bar_fg"> </div>
+            <span id="span"></span>
+        </div>
+        <div id="progress_value"> 0%</div>
+    </div>
+    <script>
+        var progress = document.getElementById("progress");
+        var progress_bar = progress.children[0];
+        var progress_value = progress.children[1];
+        var progress_bar_fg = progress_bar.children[0];
+        var mask = progress_bar.children[1];
+
+        window.onload = function(){
+            //1、监听拖动按下
+            mask.onmousedown = function(event){
+                var e = event || window.event;
+
+                //1.1 获取初始位置
+                    var offsetLeft = event.clientX - mask.offsetLeft; 
+                //1.2 监听鼠标的移动
+                document.onmousemove = function(event){
+                    var e = event || window.event;
+                    // 获取移动的位置
+                    var x = event.clientX - offsetLeft;
+                    //鼠标边界
+                    if(x < 0){
+                        x = 0;
+                    }else if (x > progress_bar.offsetWidth - mask.offsetWidth){
+                        x = progress_bar.offsetWidth - mask.offsetWidth;
+                    }
+                    mask.style.left = x + 'px';
+                    progress_bar_fg.style.width = x + 'px';
+                    progress_value.innerHTML = parseInt(x/(progress_bar.offsetWidth - mask.offsetWidth)*100 )+ 'px';
+                    return false;
+                    }
+                    // 鼠标放开的时候停止
+                    document.onmouseup = function(event){
+                        var e = event || window.event;
+                        document.onmousemove = null;
+
+                }
+            }
+
+
+
+            // function $(id){
+                // return typeof id === "string"?document.getElementById(id) : null;
+            // }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            vertical-align: top;
+        }
+        body{
+            background: url("gf01.jpeg" no-repeat);
+            background-size: cover;
+        }
+        #box{
+            background-color: rgba(255,255,255,.5);
+            height: 140px;
+
+        }
+        #box ul li img{
+            width: 180px;
+            height: 120px;
+            margin:10px 20px;
+            float: left;
+            cursor: pointer;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li><img src="gf01.jpeg" alt=""></li>
+            <li><img src="gf02.jpeg" alt=""></li>
+            <li><img src="gf03.jpeg" alt=""></li>
+            <li><img src="gf04.jpeg" alt=""></li>
+            <li><img src="gf05.jpeg" alt=""></li>
+
+        </ul>
+    </div>
+    <script>
+        window.onload = function(){
+            let box = document.getElementById("box");
+            // let bd = document.getElementsByTagName("body")
+            let allLi = document.getElementsByTagName("li");
+
+            for(let i = 0; i<allLi.length; i++){
+                let sLi = allLi[i];
+                sLi.index = i+1;
+                sLi.onclick = function(){
+                    document.body.style.background = 'url("gf0'+ this.index +'.jpeg") no-repeat';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
