@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img id="pic" src="pics/gf01.jpeg" alt="">
+    <p></p>
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+    <script>
+    let pic = document.getElementById("pic");
+    let prev = document.getElementById("prev");
+    let next = document.getElementById("next");
+    let maxIndex = 5,minIndex = 1,currentIndex = minIndex;
+    prev.onclick = function(){
+        // alert("点击了上一张")
+        if(currentIndex === minIndex){
+            currentIndex = maxIndex;
+        }else{
+            currentIndex --;
+        }
+        pic.setAttribute("src","pics/gf0"+ currentIndex +".jpeg")
+    };
+    next.onclick = function(){
+        // alert("点击了下一张");
+        if(currentIndex === maxIndex){
+            currentIndex = minIndex;
+        }else{
+            currentIndex ++;
+        }
+        pic.setAttribute("src","pics/gf0"+ currentIndex +".jpeg")
+    }
+    </script>
+</body>
+</html>
