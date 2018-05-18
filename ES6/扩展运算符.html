@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let aLi = document.querySelectorAll('ul li');
+        // let arrLi = [...aLi];
+        // arrLi.pop();
+        // arrLi.push('sda');
+        let arrLi = Array.from(aLi);
+        arrLi.pop()
+        console.log(arrLi);
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>44</li>
+        <li>55</li>
+        <li>33</li>
+    </ul>
+</body>
+</html>

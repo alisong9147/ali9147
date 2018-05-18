@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let data = [
+            {title:'的方式房东是付货款',read:100},
+            {title:'发广告过过多过多过多',read:200},
+            {title:'沙发噶过过过过过',read:300},
+            {title:'的方式房东是付货款',read:100},
+            {title:'阿鬼地方大幅度发郭德纲',read:400},
+            {title:'等等等等到多多',read:500}
+        ]
+        window.onload = function(){
+            let oUl = document.querySelector("#ul1");
+            for(let i = 0;i<data.length;i++){
+
+                var oLi = document.createElement('li');
+                oLi.innerHTML = `<span>${data[i].title}</span>
+            <span>${data[i].read}</span>
+            <a href="javascript:;">详情</a>`
+            
+                oUl.appendChild(oLi);                
+            
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+       <!-- <li>
+            <span>标题</span>
+            <span>阅读人数</span>
+            <a href="javascript:;">详情</a>
+        </li> --!>
+    </ul>
+</body>
+</html>

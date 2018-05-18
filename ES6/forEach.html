@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        
+        let arr = [
+            {title:'aa', read:1, hot:true},
+            {title:'bb',read:2,hot:true},
+            {title:'cc',read:3,hot:true},
+        ]
+        let newArr = arr.map(
+            (item,index,arr) =>{
+                console.log(item,index,arr);
+                return [1,2,3];
+            }
+        );
+        console.log(newArr);
+        
+       /*
+        let arr = ['apple','bb','cc']
+        arr.forEach(
+            (val,index,arr) =>{
+                console.log(this,val,index,arr);
+            }
+        )
+       */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

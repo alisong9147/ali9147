@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //arr.find() 是查找第一个符合条件的数组成员
+        let arr = [23,45,24,554,34,54,35]
+        // let res = arr.find(
+        //     (val,index,arr) => {
+        //         return val > 40;
+        //     }
+        // )
+        // console.log(res);
+
+        //arr.findIndex() 查找的是位置
+        let res = arr.findIndex(
+            (val,index,arr) => {
+                return val > 40;
+            }
+        )
+        console.log(res);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

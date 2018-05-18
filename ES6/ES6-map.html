@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    
+    let arr = [
+            {title:'aa', read:1, hot:true},
+            {title:'bb',read:2,hot:true},
+            {title:'cc',read:3,hot:true},
+        ]
+    let newArr = arr.map(
+        (item,index,arr) => {
+            let json = {};
+            json.t = `^-^${item.title}---`;
+            json.r = item.read + 200;
+            json.hot = item.hot == true && "zhenbang";
+            return json;
+        }
+    ) 
+    console.log(newArr); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
